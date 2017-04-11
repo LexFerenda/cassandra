@@ -3,9 +3,6 @@ services: docker
 
 env:
   - VERSION=3.10
-  - VERSION=3.0
-  - VERSION=2.2
-  - VERSION=2.1
 
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
