@@ -47,11 +47,6 @@ RUN echo 'deb http://www.apache.org/dist/cassandra/debian 310x main' >> /etc/apt
 
 ENV CASSANDRA_VERSION 3.10
 
-# https://issues.apache.org/jira/browse/CASSANDRA-11661
-RUN sed -ri 's/^(JVM_PATCH_VERSION)=.*/\1=25/' /etc/cassandra/cassandra-env.sh
-
-ENV CASSANDRA_CONFIG /etc/cassandra
-
 RUN apt-get update \
 	&& apt-get install -y \
 		cassandra="$CASSANDRA_VERSION" \
