@@ -16,7 +16,8 @@ RUN set -x \
 	&& rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
 	&& chmod +x /usr/local/bin/gosu \
 	&& gosu nobody true \
-	&& apt-get purge -y --auto-remove ca-certificates wget
+	&& apt-get purge -y --auto-remove ca-certificates wget \
+	&& apt-get install -y -t jessie-backports openjdk-8-jre-headless
 
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 514A2AD631A57A16DD0047EC749D6EEC0353B12C
 
