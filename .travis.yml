@@ -2,7 +2,7 @@ language: bash
 services: docker
 
 env:
-  - VERSION=3.10
+  - VERSION=3.11
 
 install:
   - git clone https://github.com/docker-library/official-images.git ~/official-images
